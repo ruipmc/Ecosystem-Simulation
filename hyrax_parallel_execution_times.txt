@@ -1,0 +1,110 @@
+Running with 1 threads...
+
+Input file: input5x5
+Execution time: 0.13646 ms
+
+Input file: input10x10
+Execution time: 2.69817 ms
+
+Input file: input100x100
+Execution time: 10075.34390 ms
+
+Input file: input100x100_unbal01
+Execution time: 8277.35250 ms
+
+Input file: input100x100_unbal02
+Execution time: 9720.80733 ms
+
+Input file: input200x200
+Execution time: 39175.21043 ms
+
+-----------------------------------
+
+Running with 2 threads...
+
+Input file: input5x5
+Execution time: 0.17570 ms
+
+Input file: input10x10
+Execution time: 3.33272 ms
+
+Input file: input100x100
+Execution time: 6745.88129 ms
+
+Input file: input100x100_unbal01
+Execution time: 5763.44025 ms
+
+Input file: input100x100_unbal02
+Execution time: 6253.03998 ms
+
+Input file: input200x200
+Execution time: 24418.77394 ms
+
+-----------------------------------
+
+Running with 4 threads...
+
+Input file: input5x5
+Execution time: 0.20890 ms
+
+Input file: input10x10
+Execution time: 4.23079 ms
+
+Input file: input100x100
+Execution time: 3932.32600 ms
+
+Input file: input100x100_unbal01
+Execution time: 3581.78796 ms
+
+Input file: input100x100_unbal02
+Execution time: 3805.88050 ms
+
+Input file: input200x200
+Execution time: 13846.17596 ms
+
+-----------------------------------
+
+Running with 8 threads...
+
+Input file: input5x5
+Execution time: 0.30278 ms
+
+Input file: input10x10
+Execution time: 5.87187 ms
+
+Input file: input100x100
+Execution time: 2533.53117 ms
+
+Input file: input100x100_unbal01
+Execution time: 2323.99271 ms
+
+Input file: input100x100_unbal02
+Execution time: 2485.13308 ms
+
+Input file: input200x200
+Execution time: 8089.18049 ms
+
+-----------------------------------
+
+Running with 16 threads...
+
+Input file: input5x5
+Execution time: 0.58182 ms
+
+Input file: input10x10
+Execution time: 9.36204 ms
+
+Input file: input100x100
+Execution time: 1913.93670 ms
+
+Input file: input100x100_unbal01
+Execution time: 1812.36194 ms
+
+Input file: input100x100_unbal02
+Execution time: 1933.16392 ms
+
+Input file: input200x200
+Execution time: 5194.38260 ms
+
+-----------------------------------
+

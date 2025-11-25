@@ -25,10 +25,7 @@ run_sequential: sequential
 		echo "" >> sequential_outputs/$(SEQUENTIAL_TIMING_FILE) ; \
 	done
 	@echo "✓ Execution times saved to sequential_outputs/$(SEQUENTIAL_TIMING_FILE)"
-
-clean_sequential:
-	rm -rf sequential_outputs sequential $(SEQUENTIAL_TIMING_FILE)
-
+	
 run_parallel: parallel
 	@mkdir -p parallel_outputs
 	@> parallel_outputs/$(PARALLEL_TIMING_FILE)

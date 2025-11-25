@@ -1,0 +1,18 @@
+Input file: input5x5
+Execution time: 0.02640 ms
+
+Input file: input10x10
+Execution time: 1.39954 ms
+
+Input file: input100x100
+Execution time: 8264.25214 ms
+
+Input file: input100x100_unbal01
+Execution time: 4382.71439 ms
+
+Input file: input100x100_unbal02
+Execution time: 4380.88905 ms
+
+Input file: input200x200
+Execution time: 33220.01623 ms
+
