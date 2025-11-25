@@ -9,3 +9,37 @@ INFO MPORTANTE
 -swap worlds contem o novo mundo com as novas posições
 - tanto foxes como rabbbits movem-se no sentido horário (Norte -> Este -> Sul -> Oeste)
 -não se usou MPI porque o objetivo do trabalho era trabalhar com memoria partilhada e não distribuida
+
+
+SEQUENTIAL IMPLEMENTATION
+
+-começamos pelo sequential, tal como indicado pelo prof em que definimos todos os detalhes
+-o sequential foi a peça crucial para desbloquear o design em paralelo
+-começamos por definir a estrutura, a forma como as matrizes levariam reset e como os coelhos podiam ter um respawn
+- a estrutura tanto do coelho como da fox é semelhante, dado que ambos se movem no sentido do relogio
+-decidimos dividir o projeto em várias funções de forma a manter maior organização
+
+
+PARALLEL IMPLEMENTATION
+
+-inicialmente só estavamos a usar #pragma, mas após alguns testes verificamos que os tempos que estávamos a obter não eram significativamente bons e decidimos usar omp_lock de forma a ter várias regiões independentes, menos conflito e máximo desempenho
+-no caso dos coelhos e das foxes correrem para a mesma célula (o que dificilmente aconteceria pq os coelhos movem-se primeiro, mas entre coelhos poderia acontecer), usamos omp_lock de inicio, para evitar essas race conditions
+- o #pragma inicial criava um único lock global e não nos era vantajoso.
+- cada thread tem 4 rows e o schedule é dinamico, já que existem zonas mais densas em creatures e menos densas.
+
+CONCLUSÃO - Uso de OpenMP #pragma e lock
+- Os #pragma omp parallel for foram usados corretamente para paralelizar loops e balancear carga (static para trabalho uniforme; dynamic para carga irregular).
+- Os omp_lock_t/omp_set_lock/omp_unset_lock protegem escritas concorrentes em new_world e são essenciais para a correção.
+
+THOUGHT PROCESS - PARALLEL IMPLEMENTATION
+
+- começamos por procurar partes do código em que os loops eram grandes, e que trabalho é que poderia ser feito simultaneamente - processar diferentes linhas, por exemplo um ciclo dentro de um ciclo pode ser feito em paralelo
+- escrita em células divide se por threads
+- locks por celula para resolver race conditions
+- libertar os locks no final de cada write para evitar dead locks - gestão de memória
+- schedule (static) usado para operações uniformes como inicializar o mundo/matriz
+- schedule (dynamic) usado para operações dinamicas como movimento dos animais
+
+
+
+
